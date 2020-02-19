@@ -16,7 +16,7 @@ export const requestBudgetData = () => {
 
 export const addPurchase = (price, description, category) => {
   let data = axios
-    .post("api/budget-data/purchase", {
+    .post('api/budget-data/purchase', {
       description,
       price,
       category
@@ -27,6 +27,7 @@ export const addPurchase = (price, description, category) => {
     payload: data
   };
 };
+
 export const removePurchase = (id) => {
     let data = axios
     .delete(`api/budget-data/purchase/${id}`)

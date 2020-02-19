@@ -16,13 +16,12 @@ class Budget extends Component {
   componentDidMount() {
     this.props.requestUserData();
     this.props.requestBudgetData();
-
   }
 
   render() {
     const { loading, purchases, budgetLimit } = this.props.budget;
     const { firstName, lastName } = this.props.user;
-    const { addPurchase } = this.props.addPurchase
+    // const { addPurchase } = this.props.addPurchase
     return (
       <Background>
         {loading ? <Loading /> : null}
@@ -30,7 +29,7 @@ class Budget extends Component {
           <Nav firstName={firstName} lastName={lastName}/>
           <div className="content-container">
             <div className="purchases-container">
-              <AddPurchase addPurchase={addPurchase}/>
+              <AddPurchase addPurchase={this.props.addPurchase}/>
               <DisplayPurchases purchases={purchases}/>
             </div>
             <div className="chart-container">
